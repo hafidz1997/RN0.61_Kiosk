@@ -1,0 +1,326 @@
+import {FONT_FAMILY} from './main';
+export const FIELD_COLOR = {
+  light: {
+    default: '#BEBEBE',
+    focused: '#fff',
+    error: '#FF7163',
+  },
+  dark: {
+    default: '#646464',
+    blur: '#BEBEBE',
+    focused: '#5668CF',
+    error: '#FF7163',
+  },
+};
+
+// Dynamic icons
+export const DYNAMIC_ICON = {
+  pwEye: {
+    icon: {
+      true: 'md-eye-off',
+      false: 'md-eye',
+    },
+    color: {
+      default: FIELD_COLOR.default,
+      focused: FIELD_COLOR.focused,
+      error: FIELD_COLOR.error,
+    },
+  },
+};
+
+export default Object.freeze({
+  light: {
+    textInput: {
+      flex: 1,
+      color: '#fff',
+      fontFamily: FONT_FAMILY.regular,
+    },
+    textInputContainer: {
+      paddingVertical: 0,
+    },
+    label: {
+      fontSize: 16,
+      color: '#BEBEBE',
+      fontFamily: FONT_FAMILY.regular,
+    },
+    helpLabel: {
+      fontSize: 12,
+      fontFamily: FONT_FAMILY.regular,
+    },
+    iconDefault: {
+      fontSize: 16,
+      position: 'absolute',
+      top: 35,
+      right: 0,
+      color: '#fff',
+    },
+    iconError: {
+      fontSize: 16,
+      position: 'absolute',
+      top: 35,
+      right: 0,
+      color: '#FF7163',
+    },
+  },
+  dark: {
+    textInput: {
+      txt: {
+        flex: 1,
+        color: '#646464',
+        fontFamily: FONT_FAMILY.regular,
+      },
+      container: {
+        paddingVertical: 0,
+      },
+      label: {
+        fontSize: 12,
+        color: '#919191',
+        fontFamily: FONT_FAMILY.regular,
+      },
+      helpLabel: {
+        fontSize: 12,
+        fontFamily: FONT_FAMILY.regular,
+      },
+      icon: {
+        fontSize: 16,
+        position: 'absolute',
+        top: 35,
+        right: 0,
+        color: '#fff',
+      },
+      iconError: {
+        fontSize: 16,
+        position: 'absolute',
+        top: 35,
+        right: 0,
+        color: '#FF7163',
+      },
+      secureIcon: {
+        width: 25,
+        height: 15,
+        position: 'absolute',
+        top: 35,
+        right: 15,
+        tintColor: FIELD_COLOR.dark.blur,
+      },
+      secureIconFocus: {
+        width: 25,
+        height: 15,
+        position: 'absolute',
+        top: 35,
+        right: 15,
+        tintColor: FIELD_COLOR.dark.focused,
+      },
+      secureIconError: {
+        width: 25,
+        height: 15,
+        position: 'absolute',
+        top: 35,
+        right: 15,
+        tintColor: FIELD_COLOR.dark.error,
+      },
+    },
+    datePicker: {
+      container: {
+        flex: 1,
+        marginBottom: 8,
+        marginTop: 15,
+      },
+      label: {
+        fontSize: 12,
+        fontFamily: FONT_FAMILY.regular,
+        color: '#919191',
+        marginBottom: 7,
+      },
+      labelError: {
+        fontSize: 12,
+        fontFamily: FONT_FAMILY.regular,
+        marginTop: 2,
+        color: '#d50000',
+      },
+      default: {
+        flex: 1,
+        borderBottomWidth: 0.7,
+        borderColor: '#BEBEBE',
+        flexDirection: 'row',
+      },
+      error: {
+        flex: 1,
+        borderBottomWidth: 1.75,
+        borderColor: '#d50000',
+        flexDirection: 'row',
+      },
+      txt: {
+        fontSize: 16,
+        fontFamily: FONT_FAMILY.regular,
+        color: '#9a9da5',
+        paddingBottom: 10,
+        bottom: 0,
+      },
+      txtError: {
+        fontSize: 16,
+        fontFamily: FONT_FAMILY.regular,
+        color: '#d50000',
+        // position: 'absolute',
+        paddingBottom: 10,
+        bottom: 0,
+      },
+      txtActive: {
+        fontSize: 16,
+        fontFamily: FONT_FAMILY.regular,
+        color: '#646464',
+        paddingBottom: 10,
+        bottom: 0,
+      },
+      icon: {
+        width: 20,
+        height: 20,
+        position: 'absolute',
+        paddingBottom: 10,
+        right: 5,
+        bottom: 10,
+      },
+    },
+    picker: {
+      container: {
+        marginTop: 12.7,
+        // backgroundColor: 'yellow',
+      },
+      default: {
+        flex: 1,
+        borderBottomWidth: 0.5,
+        borderColor: '#BEBEBE',
+        marginBottom: 8,
+        flexDirection: 'row',
+      },
+      error: {
+        flex: 1,
+        borderBottomWidth: 1.75,
+        borderColor: '#d50000',
+        marginBottom: 8,
+        flexDirection: 'row',
+      },
+      label: {
+        fontSize: 12,
+        fontFamily: FONT_FAMILY.regular,
+        color: '#919191',
+        paddingBottom: 5,
+      },
+      labelError: {
+        fontSize: 12,
+        fontFamily: FONT_FAMILY.regular,
+        top: -4,
+        color: '#d50000',
+      },
+      txt: {
+        fontSize: 16,
+        fontFamily: FONT_FAMILY.regular,
+        color: '#9a9da5',
+        paddingBottom: 10,
+        bottom: 0,
+      },
+      txtError: {
+        fontSize: 16,
+        fontFamily: FONT_FAMILY.regular,
+        color: '#d50000',
+        // position: 'absolute',
+        paddingBottom: 10,
+        bottom: 0,
+      },
+      txtActive: {
+        fontSize: 16,
+        fontFamily: FONT_FAMILY.regular,
+        color: '#646464',
+        paddingBottom: 10,
+        bottom: 0,
+      },
+      icon: {
+        fontSize: 14,
+        position: 'absolute',
+        paddingBottom: 5,
+        right: 5,
+        bottom: 10,
+        color: '#BEBEBE',
+      },
+      iconError: {
+        fontSize: 14,
+        position: 'absolute',
+        paddingBottom: 5,
+        right: 5,
+        bottom: 10,
+        color: '#d50000',
+      },
+    },
+    checkbox: {
+      label: {
+        fontSize: 14,
+        fontFamily: FONT_FAMILY.regular,
+        color: '#646464',
+      },
+      default: {
+        height: 20,
+        width: 20,
+        borderWidth: 2,
+        borderColor: '#3E50B4',
+        borderRadius: 5,
+        marginRight: 10,
+      },
+      error: {
+        height: 20,
+        width: 20,
+        borderWidth: 2,
+        borderColor: '#d50000',
+        borderRadius: 5,
+        marginRight: 10,
+      },
+      active: {
+        height: 20,
+        width: 20,
+        borderWidth: 2,
+        borderColor: '#3E50B4',
+        backgroundColor: '#3E50B4',
+        borderRadius: 5,
+        marginRight: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+    },
+    radio: {
+      label: {
+        fontSize: 14,
+        fontFamily: FONT_FAMILY.regular,
+        color: '#646464',
+      },
+      default: {
+        height: 20,
+        width: 20,
+        borderWidth: 2,
+        borderColor: '#3E50B4',
+        borderRadius: 50,
+        marginRight: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      error: {
+        height: 20,
+        width: 20,
+        borderWidth: 2,
+        borderColor: '#d50000',
+        borderRadius: 50,
+        marginRight: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      active: {
+        height: 10,
+        width: 10,
+        borderWidth: 2,
+        borderColor: '#3E50B4',
+        backgroundColor: '#3E50B4',
+        borderRadius: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+    },
+  },
+});
