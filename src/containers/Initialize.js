@@ -5,7 +5,9 @@ import {Button} from '../components/Button';
 export default class Initialize extends Component {
   render() {
     return (
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        style={{flex: 1, backgroundColor: 'white'}}
+        contentContainerStyle={styles.container}>
         <Image
           style={styles.img}
           source={require('../assets/images/header.png')}
@@ -22,9 +24,13 @@ export default class Initialize extends Component {
           />
           <Button
             onPress={() => this.props.navigation.navigate('package')}
-            title="Drop Surat & Paket Kiriman"
+            title="Drop Surat & Paket"
           />
         </View>
+        <Button
+          onPress={() => this.props.navigation.navigate('package')}
+          title="Cancel Invoice"
+        />
       </ScrollView>
     );
   }
@@ -32,7 +38,6 @@ export default class Initialize extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
@@ -40,7 +45,7 @@ const styles = StyleSheet.create({
   },
   text: {alignSelf: 'center', fontSize: 20, margin: 10, textAlign: 'center'},
   img: {alignSelf: 'center', margin: 20},
-  row: {flexDirection: 'row', justifyContent: 'space-between'},
+  row: {flexDirection: 'row'},
   input: {
     margin: 15,
     height: 50,

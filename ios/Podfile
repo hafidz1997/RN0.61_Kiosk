@@ -1,5 +1,5 @@
 platform :ios, '9.0'
-require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/kiosks'
 
 target 'kiosk' do
   # Pods for kiosk
@@ -34,12 +34,14 @@ target 'kiosk' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
   target 'kioskTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  use_native_modules!
+  use_kiosks!
 end
 
 target 'kiosk-tvOS' do

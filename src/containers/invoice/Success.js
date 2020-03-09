@@ -5,7 +5,9 @@ import {Button} from '../../components/Button';
 export default class Success extends Component {
   render() {
     return (
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        style={{flex: 1, backgroundColor: 'white'}}
+        contentContainerStyle={styles.container}>
         <Image
           style={styles.img}
           source={require('../../assets/images/header.png')}
@@ -39,11 +41,10 @@ export default class Success extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
+    padding: 20,
   },
   text: {alignSelf: 'center', fontSize: 20, margin: 10, textAlign: 'center'},
   img: {alignSelf: 'center', margin: 20},

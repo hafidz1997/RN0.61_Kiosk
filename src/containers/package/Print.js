@@ -5,7 +5,9 @@ import {Button} from '../../components/Button';
 export default class RNPrintExample extends Component {
   render() {
     return (
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        style={{flex: 1, backgroundColor: 'white', padding: 20}}
+        contentContainerStyle={styles.container}>
         <Text>Print</Text>
         <Button
           onPress={() => this.props.navigation.navigate('success2')}
@@ -18,7 +20,6 @@ export default class RNPrintExample extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',

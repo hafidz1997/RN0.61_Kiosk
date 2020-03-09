@@ -30,11 +30,9 @@ export default class First extends Component {
       return <Loader />;
     } else {
       return (
-        <ScrollView contentContainerStyle={styles.container}>
-          <Button
-            onPress={() => this.props.navigation.navigate('initialize')}
-            title="Home"
-          />
+        <ScrollView
+          style={{flex: 1, backgroundColor: 'white'}}
+          contentContainerStyle={styles.container}>
           <Image
             style={styles.img}
             source={require('../../assets/images/header.png')}
@@ -46,16 +44,16 @@ export default class First extends Component {
             style={styles.img}
             source={require('../../assets/images/qrcode.png')}
           />
-          <View style={styles.row}>
-            <Button
+          {/* <View style={styles.row}> */}
+          {/* <Button
               onPress={() => this.props.navigation.navigate('error')}
               title="Error"
-            />
-            {/* <Button
+            /> */}
+          {/* <Button
               onPress={() => this.props.navigation.navigate('second')}
               title="Next"
             /> */}
-          </View>
+          {/* </View> */}
         </ScrollView>
       );
     }
@@ -64,7 +62,6 @@ export default class First extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
