@@ -2,8 +2,8 @@ import {createSwitchNavigator, createAppContainer} from 'react-navigation';
 
 // Import navigator screen file
 import First from '../../containers/invoice/First';
-import Second from '../../containers/invoice/Second';
-import Third from '../../containers/invoice/Third';
+
+import Detail from '../../containers/invoice/Detail';
 import Camera from '../../containers/invoice/Camera';
 import Print from '../../containers/invoice/Print';
 import Error from '../../containers/invoice/Error';
@@ -15,16 +15,12 @@ export const InvoiceStack = createAppContainer(
       screen: First,
       navigationOptions: {header: null},
     },
-    second: {
-      screen: Second,
-      navigationOptions: {header: null},
-    },
     camera: {
       screen: Camera,
       navigationOptions: {header: null},
     },
-    third: {
-      screen: Third,
+    detail: {
+      screen: Detail,
       navigationOptions: {header: null},
     },
     print: {

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {ScrollView, View, Text, Image, StyleSheet} from 'react-native';
 import {Button} from '../../components/Button';
 
-export default class Third extends Component {
+export default class Detail extends Component {
   render() {
     return (
       <ScrollView
@@ -24,7 +24,7 @@ export default class Third extends Component {
           />
           <View style={{width: '30%'}} />
           <Button
-            onPress={() => this.props.navigation.navigate('print')}
+            onPress={() => this.props.navigation.navigate('camera')}
             title="print"
           />
         </View>

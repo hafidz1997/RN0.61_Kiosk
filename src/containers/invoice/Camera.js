@@ -17,7 +17,7 @@ export default class Camera extends Component {
       const options = {quality: 0.5, base64: true, fixOrientation: true};
       const data = await this.camera.takePictureAsync(options);
       console.log('captured!');
-      this.props.navigation.navigate('third');
+      this.props.navigation.navigate('print');
     }
   };
   render() {

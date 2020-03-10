@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
   btn: {
     margin: 10,
     marginTop: 20,
-    padding: 13,
-    paddingHorizontal: 30,
+    padding: 15,
+    paddingHorizontal: 18,
     backgroundColor: '#DDDDDD',
     borderWidth: 2,
     borderColor: 'black',

@@ -29,8 +29,14 @@ public class MainApplication extends Application implements ReactApplication {
     // @SuppressWarnings("UnnecessaryLocalVariable")
     // List<ReactPackage> packages = new PackageList(this).getPackages();
     // // Packages that cannot be autolinked yet can be added manually here, for
-    // example:
+    // // example:
     // // packages.add(new MyReactNativePackage());
+    // packages.add(new MainReactPackage());
+    // packages.add(new RNCameraPackage());
+    // packages.add(new RNFSPackage());
+    // packages.add(new RNViewShotPackage());
+    // packages.add(new PrinterPackage());
+    // packages.add(new HideKeyBoardPackage());
     // // include package
 
     // return packages;
@@ -38,9 +44,8 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(new MainReactPackage(),
-            new RNCameraPackage(), new RNFSPackage(), new RNViewShotPackage(),
-          new PrinterPackage());
+      return Arrays.<ReactPackage>asList(new MainReactPackage(), new RNCameraPackage(), new RNFSPackage(),
+          new RNViewShotPackage(), new PrinterPackage(), new HideKeyBoardPackage());
     }
 
     @Override
