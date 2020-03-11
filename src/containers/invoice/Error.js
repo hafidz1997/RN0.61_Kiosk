@@ -13,16 +13,16 @@ export default class Error extends Component {
           source={require('../../assets/images/header.png')}
         />
         <Text style={styles.text}>
-          Mohon hubungi Finance Division untuk validasi lebih lanjut.
+          {
+            'Mohon hubungi Finance Division untuk validasi lebih lanjut.\nMohon maaf untuk ketidak nyamanannya.\nExtention Number : XXXXXX'
+          }
         </Text>
-        <Text style={styles.text}>Mohon maaf untuk ketidak nyamanannya.</Text>
-        <Text style={styles.text}>Extention Number : XXXXXX</Text>
         <Image
           style={styles.img}
           source={require('../../assets/images/error.png')}
         />
         <Button
-          onPress={() => this.props.navigation.navigate('first')}
+          onPress={() => this.props.navigation.navigate('initialize')}
           title="Selesai"
         />
       </ScrollView>
@@ -37,7 +37,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
   },
-  text: {alignSelf: 'center', fontSize: 20, margin: 10, textAlign: 'center'},
+  text: {
+    fontWeight: 'bold',
+    color: 'black',
+    alignSelf: 'center',
+    fontSize: 20,
+    margin: 10,
+    textAlign: 'center',
+  },
   img: {alignSelf: 'center', margin: 20},
   row: {flexDirection: 'row', justifyContent: 'space-between'},
   input: {

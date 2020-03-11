@@ -19,5 +19,10 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'black',
   },
-  btnTxt: {alignSelf: 'center', fontSize: 15, fontWeight: 'bold'},
+  btnTxt: {
+    color: 'black',
+    alignSelf: 'center',
+    fontSize: 15,
+    fontWeight: 'bold',
+  },
 });

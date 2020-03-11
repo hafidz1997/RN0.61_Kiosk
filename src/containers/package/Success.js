@@ -28,7 +28,7 @@ export default class Success extends Component {
         </Text>
         <Button
           onPress={() => this.props.navigation.navigate('initialize')}
-          title="Home"
+          title="Selesai"
         />
       </ScrollView>
     );
@@ -42,7 +42,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
   },
-  text: {alignSelf: 'center', fontSize: 20, margin: 10, textAlign: 'center'},
+  text: {
+    fontWeight: 'bold',
+    color: 'black',
+    alignSelf: 'center',
+    fontSize: 20,
+    margin: 10,
+    textAlign: 'center',
+  },
   img: {alignSelf: 'center', margin: 20},
   row: {flexDirection: 'row', justifyContent: 'space-between'},
   input: {

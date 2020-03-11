@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import {Button} from '../../components/Button';
 import {Loader} from '../../components/Loader';
+import axios from 'axios';
 
 const HideKeyboardExample = NativeModules.HideKeyboardExample;
 
@@ -47,6 +48,19 @@ export default class First extends Component {
     HideKeyboardExample.hideSoftKeyBoard();
   };
 
+  // async postApi() {
+  //   await axios
+  //     .post('/api/v1/vendor/', {
+  //       code: 'Fred',
+  //     })
+  //     .then(function(response) {
+  //       console.log(response);
+  //     })
+  //     .catch(function(error) {
+  //       console.log(error);
+  //     });
+  // }
+
   format = code => {
     // 98765-evi-00000000033-evi-0800-evi-2020-evi-1
     // 8992775214008
@@ -57,12 +71,12 @@ export default class First extends Component {
     let vendor = parseInt(vendorCode, 10);
     console.log(vendor);
     // if (code.match(/^\d{5}\-evi\-\d{11}\-evi\-(\d{4}\-evi\-){2}\d{1}$/)) {
-    if (code.match(/^\d{13}$/)) {
+    if (code.match(/^\d$/)) {
       console.log('match');
       this.props.navigation.navigate('detail');
     } else {
       console.log('no');
-      // this.props.navigation.navigate('error');
+      this.props.navigation.navigate('error');
     }
   };
 
@@ -84,12 +98,13 @@ export default class First extends Component {
             Silahkan scan QR code MAP EVI dengan Barcode scanner
           </Text>
           <TextInput
-            style={styles.Input}
+            style={styles.hiddenInput}
             underlineColorAndroid="transparent"
             autoFocus={true}
             onFocus={this._onFocus}
             placeholderTextColor="grey"
             onChangeText={code => this.format(code)}
+            keyboardType={'none'}
           />
           <Image
             style={styles.img}
@@ -131,7 +146,14 @@ const styles = StyleSheet.create({
     padding: 10,
     textAlign: 'center',
   },
-  text: {alignSelf: 'center', fontSize: 20, margin: 10, textAlign: 'center'},
+  text: {
+    fontWeight: 'bold',
+    color: 'black',
+    alignSelf: 'center',
+    fontSize: 20,
+    margin: 10,
+    textAlign: 'center',
+  },
   img: {alignSelf: 'center', margin: 20},
   row: {flexDirection: 'row', justifyContent: 'space-between'},
 });
