@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, ScrollView, NativeModules} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  NativeModules,
+  SafeAreaView,
+} from 'react-native';
 import ViewShot from 'react-native-view-shot';
 import RNFS from 'react-native-fs';
 
@@ -19,7 +26,7 @@ export default class App extends Component {
       RNFS.moveFile(uri, imagePath)
         .then(success => {
           console.log('FILE MOVED!');
-          //this.printViewShot(imagePath)
+          this.printViewShot(imagePath);
         })
         .catch(err => {
           console.log(err.message);
@@ -40,47 +47,53 @@ export default class App extends Component {
 
   render() {
     return (
-      <ScrollView
-        style={{flex: 1, backgroundColor: 'white', padding: 40}}
-        contentContainerStyle={styles.container}>
-        <ViewShot
-          style={{margin: 80}}
-          ref="viewShot"
-          options={{format: 'jpg', quality: 0.9}}>
-          <View style={styles.invoice}>
-            <Text style={styles.text}>{'No. Urut\nVendor Invoice'}</Text>
-            <Text style={[styles.text, {fontSize: 80}]}>1</Text>
-            <Text style={[styles.text, {fontSize: 15}]}>
-              {'11/02/2020\n15:59:00'}
-            </Text>
-            <Text style={[styles.text, {fontSize: 18, margin: 0}]}>
-              {'Invoice # 98765\nPO # 4503769554'}
-            </Text>
+      <SafeAreaView style={{flex: 1}}>
+        <ScrollView
+          style={{
+            flex: 1,
+            backgroundColor: 'white',
+            paddingVertical: 50,
+            paddingHorizontal: 10,
+          }}
+          contentContainerStyle={styles.container}>
+          <ViewShot ref="viewShot" options={{format: 'jpg', quality: 0.9}}>
+            <View style={styles.invoice}>
+              <Text style={styles.text}>{'No. Urut\nVendor Invoice'}</Text>
+              <Text style={[styles.text, {fontSize: 80}]}>1</Text>
+              <Text style={[styles.text, {fontSize: 15}]}>
+                {'11/02/2020\n15:59:00'}
+              </Text>
+              <Text style={[styles.text, {fontSize: 18, margin: 0}]}>
+                {'Invoice # 98765\nPO # 4503769554'}
+              </Text>
+            </View>
+          </ViewShot>
+          <View style={styles.row}>
+            <Button title="Connect" onPress={() => PrinterManager.connect()} />
+            <Button
+              title="Disconnect"
+              onPress={() => PrinterManager.disconnect()}
+            />
           </View>
-        </ViewShot>
-        <View style={styles.row}>
-          <Button title="Connect" onPress={() => PrinterManager.connect()} />
+          <View style={styles.row}>
+            <Button
+              title="Print Text"
+              onPress={() =>
+                PrinterManager.printText('\f(TB)Hello\n\f(TI)world')
+              }
+            />
+            <Button
+              title="Print view shot"
+              onPress={() => this.printViewShot(imagePath)}
+            />
+            <Button title="Capture" onPress={() => this.captureView()} />
+          </View>
           <Button
-            title="Disconnect"
-            onPress={() => PrinterManager.disconnect()}
+            onPress={() => this.props.navigation.navigate('success')}
+            title="Next"
           />
-        </View>
-        <View style={styles.row}>
-          <Button
-            title="Print Text"
-            onPress={() => PrinterManager.printText('Hello')}
-          />
-          <Button
-            title="Print view shot"
-            onPress={() => this.printViewShot(imagePath)}
-          />
-          <Button title="Capture" onPress={() => this.captureView()} />
-        </View>
-        <Button
-          onPress={() => this.props.navigation.navigate('success')}
-          title="Next"
-        />
-      </ScrollView>
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 }
@@ -90,12 +103,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
   },
   invoice: {
-    width: '100%',
-    padding: 20,
-    paddingHorizontal: 80,
+    width: 300,
+    padding: 10,
+    // paddingHorizontal: 80,
     borderColor: 'black',
     borderWidth: 3,
   },
